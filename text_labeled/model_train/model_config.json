@@ -1,0 +1,3 @@
+{
+    "影视": ["D:/pythonwork/uwsgi/text_labeled/model_train/movie/Tokenizer", 60, 2, "D:/pythonwork/uwsgi/text_labeled/model_train/movie/token_indice", 98, "http://localhost:8501/v1/models/movie:predict"],
+    "美妆": ["D:/pythonwork/uwsgi/text_labeled/model_train/beauty/Tokenizer", 75, 2, "D:/pythonwork/uwsgi/text_labeled/model_train/beauty/token_indice", 119, "http://localhost:8502/v1/models/beauty:predict"]}
