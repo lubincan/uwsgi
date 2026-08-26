@@ -505,5 +505,4 @@ curl "http://127.0.0.1:8000/api/cntext?text=今天天气不错"
 **如果你现在也觉得一个人学习大模型应用有点难，可以来看看。不为了别的，就为了下次凌晨卡住的时候或想实现token自由，知道去哪儿问一句。**
 
 👉 [一起聊聊技术](https://share.note.youdao.com/s/3Hc9ju2)
-<img src="uwsgi/blob/main/img.png" width="300" height="200" alt="描述">
 **顺手给个 Star 吧。让我知道，这条路上不止我一个人。** 🚀
