@@ -61,56 +61,8 @@
 | 图像去重 | OpenCV (cv2) | 帖子图片指纹（DCT + 汉明距离）去重 | 4.x+ |
 | 环境管理 | conda | 依赖与运行环境管理 | Python 3.9 |
 
-### 1.2 项目目录结构
 
-```
-uwsgi/
-├── manage.py                    # Django 命令行入口
-├── db.sqlite3                   # Django 默认数据库（未使用业务表）
-├── environment.txt              # conda 环境导出文件
-├── README.md                    # 项目说明文档（本文件）
-├── requirements.txt             # Python 依赖清单
-├── uwsgi/                       # Django 项目配置
-│   ├── settings.py              # 项目配置（含 CORS）
-│   ├── urls.py                  # 根路由配置
-│   ├── wsgi.py                  # WSGI 入口
-│   └── asgi.py                  # ASGI 入口
-├── api/                         # 对外 API 应用
-│   ├── urls.py                  # API 路由配置
-│   └── views.py                 # 视图函数（请求处理）
-├── recomm/                      # 推荐系统模块
-│   ├── api.py                   # 召回/过滤/缓存/行为写入
-│   ├── import_relation.py       # 用户-帖子关系导入
-│   ├── import_node.sh           # Cypher 节点导入脚本
-│   ├── import/                  # 数据导入脚本与 CSV
-│   │   ├── node_import_cypher.py    # Neo4j 节点导入脚本
-│   │   ├── import_cypher.py         # Cypher 导入工具
-│   │   ├── aTOb.py                  # 关系转换工具
-│   │   └── *.csv                    # 用户画像/帖子/行为数据
-│   └── model/                   # Wide & Deep 排序模型
-│       └── trainer/
-│           ├── model.py         # 特征列与模型定义
-│           └── task.py          # 训练任务入口
-└── text_labeled/                # 文本标签识别模块
-    ├── api.py                   # 分词、图谱匹配、标签归一化流程
-    ├── settings.py              # 标签树结构定义 (LABEL_STRUCTURE)
-    ├── userdict.txt             # jieba 用户自定义词典
-    ├── stopdict.txt             # jieba 停用词典
-    ├── create_graph/            # 知识图谱构建
-    │   ├── build.py             # 标签节点/词汇节点与关系创建
-    │   ├── get_vocab.py         # 从文章抽取名词词汇
-    │   └── beauty|fashion|movie|star/   # 原始文章语料
-    └── model_train/             # 文本分类模型训练与预测
-        ├── model_all_train.py   # 特征工程 + 模型训练
-        ├── multiprocess_train.py    # 多进程并行训练
-        ├── multithread_predict.py   # 多线程预测 / H5 & PB 模型服务
-        ├── get_sample.py        # 正负样本构建
-        ├── data_analysis.py     # 样本分布分析
-        ├── model_config.json    # 模型微服务配置
-        └── beauty|fashion|movie|star_*_train.py  # 各标签训练入口
-```
-
-### 1.3 架构分层
+### 1.2 架构分层
 
 ```
 ┌─────────────────────────────────────────────────────┐
